@@ -1,0 +1,145 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\pagestyle{empty}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{adjustbox}
+\usepackage[papersize={148mm,100mm}, margin=9.0mm, marginratio=1:1]{geometry}
+\renewcommand{\quad}{\hspace*{2.5ex}}
+\setlength{\parindent}{0pt}
+\renewcommand{\familydefault}{\sfdefault}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\balancedVPhantom}[1]{% gives minimum vertical size
+  $\mathsurround=0pt \vcenter{\hrule width0pt height #1}$\ignorespaces
+}
+
+\newcommand{\destbox}[1]{
+  \begin{adjustbox}{
+    cfbox=red,
+    width=6.5mm,
+    totalheight=9mm
+  }
+    \textrm{\textbf{#1}}
+  \end{adjustbox}
+}
+
+\def\xloop#1{%
+  \ifx\relax#1
+    \else
+    \destbox{#1}
+    \hspace*{-2.5mm}
+    \expandafter\xloop%
+  \fi}
+\def\destination#1{\xloop#1\relax}%
+
+
+\begin{document}
+\begin{minipage}{\textwidth}
+    \centering {\Huge \textrm{\textbf{
+             JJ1OKA     }}}
+\end{minipage}
+
+%\vfill
+\bigskip
+
+% end 16mm from margin
+\begin{minipage}[t]{114mm}
+
+\begin{minipage}[t]{0.3\textwidth}
+    \textbf{Andrew Young} \\
+    \footnotesize
+    4-8-24 Nakahara \\
+    Mitaka, Tokyo \\
+    181-0005 \\
+    Japan
+\end{minipage}
+\begin{minipage}[t]{0.35\textwidth}
+    \begin{footnotesize}
+        \begin{tabbing}
+            % set spacing
+            ITU Zone:
+                \=  00
+                \=  00
+                \kill
+            CQ Zone:
+                \>  25 \,
+                \>  \\
+            ITU Zone:
+                \>  45 \,
+                \>  \\
+            Prefecture:
+                \>  10 (Tokyo) \,
+                \>  \\
+            City:
+                \>  1005 (Mitaka) \,
+                \>  \\
+            IOTA:
+                \>  AS-007 \\
+                \>  \\
+        \end{tabbing}
+    \end{footnotesize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.35\textwidth}
+%    \centering
+    \scriptsize
+    \adjustbox{fbox,left}{
+      \begin{minipage}[t]{0mm}
+        \adjustbox{valign=B}{\scriptsize QSO WITH:}
+      \end{minipage}
+      \begin{minipage}[t]{35mm}
+        \adjustbox{valign=T}{\LARGE ::FULLTO::}
+      \end{minipage}
+    }
+  %\vphantom{$\int\limits_{\dfrac aa}$}}
+\end{minipage}
+\vfill
+\begin{minipage}{\textwidth}
+    \footnotesize Confirming the following QSO(s):
+    \topsep3pt
+    \begin{center}
+        \begin{tabularx}{\textwidth}{|Y|Y|Y|c|c|Y|}
+            \hline
+            \rule{0pt}{0.125in}\bf Date & \bf UTC &\bf MHz &\bf \,\,\, Mode \,\,\, &\bf \, RST \, & \bf QSL\\
+            \hline
+            \hline
+            \balancedVPhantom{2em} ::DATE:: & ::TIME:: & ::FREQ:: & ::MODE:: & ::RST:: & PSE \, TNX\\
+            \hline
+        \end{tabularx}
+    \end{center}
+\end{minipage}
+
+\medskip
+
+\footnotesize \textbf{QTH:}
+     Mitaka, Tokyo \,
+     PM95SP89EJ \,
+      139.568326, 35.664095 \,
+
+\medskip
+
+\footnotesize
+\textbf{Rig:} \makebox[0.3\textwidth]{Yaesu FT-991A}
+\textbf{Power:} \makebox[0.1\textwidth]{30W}
+\textbf{Antenna:} \makebox[3cm]{Diamond X-50 Colinear}
+
+\medskip
+
+\textbf{Comments:}
+::COMMENTS::
+\hfill
+
+\end{minipage}
+\begin{minipage}[b]{16mm}
+  \hspace{5mm}
+  \begin{adjustbox}{rotate=270}
+    \hspace*{18mm}
+    \destination{::TO::}
+    \hspace*{-3mm}
+  \end{adjustbox}
+\end{minipage}
+
+\tiny
+\end{document}
