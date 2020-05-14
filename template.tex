@@ -34,8 +34,7 @@
   \fi}
 \def\destination#1{\xloop#1\relax}%
 
-
-\begin{document}
+\newcommand{\qsl}[8]{
 \begin{minipage}{\textwidth}
     \centering {\Huge \textrm{\textbf{
              JJ1OKA     }}}
@@ -83,17 +82,15 @@
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.35\textwidth}
-%    \centering
     \scriptsize
     \adjustbox{fbox,left}{
       \begin{minipage}[t]{0mm}
         \adjustbox{valign=B}{\scriptsize QSO WITH:}
       \end{minipage}
       \begin{minipage}[t]{35mm}
-        \adjustbox{valign=T}{\LARGE ::FULLTO::}
+        \adjustbox{valign=T}{\LARGE #2}
       \end{minipage}
     }
-  %\vphantom{$\int\limits_{\dfrac aa}$}}
 \end{minipage}
 \vfill
 \begin{minipage}{\textwidth}
@@ -105,7 +102,7 @@
             \rule{0pt}{0.125in}\bf Date & \bf UTC &\bf MHz &\bf \,\,\, Mode \,\,\, &\bf \, RST \, & \bf QSL\\
             \hline
             \hline
-            \balancedVPhantom{2em} ::DATE:: & ::TIME:: & ::FREQ:: & ::MODE:: & ::RST:: & PSE \, TNX\\
+            \balancedVPhantom{2em} #3 & #4 & #5 & #6 & #7 & PSE \, TNX\\
             \hline
         \end{tabularx}
     \end{center}
@@ -128,7 +125,7 @@
 \medskip
 
 \textbf{Comments:}
-::COMMENTS::
+#8
 \hfill
 
 \end{minipage}
@@ -136,10 +133,10 @@
   \hspace{5mm}
   \begin{adjustbox}{rotate=270}
     \hspace*{18mm}
-    \destination{::TO::}
+    \destination{#1}
     \hspace*{-3mm}
   \end{adjustbox}
 \end{minipage}
 
 \tiny
-\end{document}
+}
